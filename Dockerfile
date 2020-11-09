@@ -1,5 +1,5 @@
 # get django image
-FROM django
+FROM python
 
 #add metadata to image
 LABEL maintainer = "David Kim <davidkim827@gmail.com>"
