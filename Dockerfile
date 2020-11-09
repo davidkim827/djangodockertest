@@ -5,12 +5,12 @@ FROM python
 LABEL maintainer = "David Kim <davidkim827@gmail.com>"
 
 ADD . /opt/TestApp
-
+COPY djangodockertest /opt/TestApp
 WORKDIR /opt/TestApp
 
 EXPOSE 8080/tcp
 
-RUN ["python3", "-m", "venv", ".venv"]
+RUN ["python", "-m", "venv", ".venv"]
 RUN ["source", ".venv/bin/activate"]
 RUN ["pip", "install", "-r", "requirements.txt"]
 
