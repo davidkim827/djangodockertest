@@ -5,7 +5,7 @@ FROM python
 LABEL maintainer = "David Kim <davidkim827@gmail.com>"
 
 ADD . /opt/TestApp
-COPY djangodockertest /opt/TestApp
+COPY ../djangodockertest /opt/TestApp
 WORKDIR /opt/TestApp
 
 EXPOSE 8080/tcp
