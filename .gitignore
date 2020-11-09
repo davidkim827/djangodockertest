@@ -1,0 +1,4 @@
+venv/
+.idea/
+*.pyc
+backend/dockertest/static/
