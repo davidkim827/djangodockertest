@@ -11,4 +11,4 @@ EXPOSE 8080/tcp
 
 RUN ["pip", "install", "-r", "backend/requirements.txt"]
 
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "-w", "2", "-k", "uvicorn.workers.UvicornWorker", "--log-level", "warning", "backend.dockertest.dockertest.wsgi", "2>&1", "&"]
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "--log-level", "warning", "backend.dockertest.dockertest.wsgi", "2>&1", "&"]
