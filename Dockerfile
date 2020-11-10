@@ -11,4 +11,4 @@ EXPOSE 8080/tcp
 
 RUN ["pip", "install", "-r", "backend/requirements.txt"]
 
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "--log-level", "warning", "dockertest.wsgi", "--workers", "3"]
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "--log-level", "warning", "wsgi:application", "--workers", "3"]
