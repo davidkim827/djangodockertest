@@ -10,5 +10,6 @@ WORKDIR /usr/src/app
 EXPOSE 8080/tcp
 
 RUN ["pip", "install", "-r", "backend/requirements.txt"]
+RUN ["echo", "'hi'"]
 
 CMD ["gunicorn", "-b", "0.0.0.0:8080", "--log-level", "warning", "--chdir", "./backend/dockertest/dockertest", "wsgi:application"]
