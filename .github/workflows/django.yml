@@ -30,3 +30,12 @@ jobs:
       run: |
         cd backend/dockertest
         python manage.py test
+    - name: Run on localserver
+      run: |
+        cd backend/dockertest
+        python manage.py runserver localhost:8000
+    - name: Run ZAP
+      uses: zaproxy/action-baseline@v0.4.0
+      with:
+        target: "localhost:8000"
+        
