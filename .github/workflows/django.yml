@@ -33,7 +33,7 @@ jobs:
     - name: Run on localserver
       run: |
         cd backend/dockertest
-        python manage.py runserver localhost:8000
+        nohup python manage.py runserver localhost:8000 &
     - name: Run ZAP
       uses: zaproxy/action-baseline@v0.4.0
       with:
