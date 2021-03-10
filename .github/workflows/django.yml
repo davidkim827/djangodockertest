@@ -30,3 +30,13 @@ jobs:
       run: |
         cd backend/dockertest
         python manage.py test
+    - name: Run on localserver
+      run: |
+        cd backend/dockertest
+        nohup python manage.py runserver localhost:8000 &
+    - name: Run ZAP
+      uses: zaproxy/action-baseline@v0.4.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        target: "http://localhost:8000"
+        
